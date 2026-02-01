@@ -14,6 +14,30 @@
     
     // ADD CODE HERE
 
+    // NTS: Define activities as an array of objects
+    const myDay = [
+  { time: 0, activity: "Wake up & stretch 🌅" },
+  { time: 2000, activity: "Breakfast & coffee ☕" },
+  { time: 4000, activity: "Morning work session 💻" },
+  { time: 7000, activity: "Quick walk outdoors 🚶‍♂️" },
+  { time: 9000, activity: "Lunch break 🥗" },
+  { time: 11000, activity: "Creative writing ✍️" }
+  ];
+  
+  // NTS: Display each activity after its timeout
+  myDay.forEach(item => {
+  setTimeout(() => {
+    output.textContent = item.activity;
+  }, item.time);
+});
+
+// SURPRISE TWISE: random mood emoji after last activity
+setTimeout(() => {
+  const moods = ["😎", "🤔", "🥳", "😴"];
+  const randomMood = moods[Math.floor(Math.random() * moods.length)];
+  output.textContent += ` | Mood boost: ${randomMood}`;
+}, 13000);
+
   </script>
 
 </body>
